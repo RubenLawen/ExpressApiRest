@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const fs = require("fs/promises")
 const cors = require("cors");
-var cryptoJS = require("crypto-js");
 require('dotenv').config(); 
 
 // Setting for ejs

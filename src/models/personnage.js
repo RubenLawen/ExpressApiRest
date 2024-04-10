@@ -3,7 +3,6 @@ require("dotenv").config();
 const url = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@portefoliot.syxdk4w.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(
   url,
-  { useUnifiedTopology: true },
   { useNewUrlParser: true },
   { connectTimeoutMS: 30000 },
   { keepAlive: 1 }
