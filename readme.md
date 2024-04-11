@@ -40,3 +40,21 @@ Permet de se connecter et générer un token
 | ----- | ------ |-------------|
 | email  | String | Email de l'utilisateur du compte.
 | password | String | mot de passe du compte.
+
+#### /deleteUser
+
+Permet de supprimer de la base de donnée un compte si il a les accès.
+
+| Field |  Type  | Description |
+| ----- | ------ |-------------.|
+| email  | String | Email ciblé
+| token | String | Token généré par l'api après le login.
+
+
+## Pour lancer les tests
+
+Ouvre le cmd et tapez:
+
+```
+npm run test
+```

@@ -16,8 +16,9 @@ async function login(element){
         let exist = await db.findOne({email: element.email.toLowerCase()})
         if(exist){
             if(await bcrypt.compare(element.password, exist.password)){
-                const tokenUser = await jwt.sign({user: element.pseudo}, process.env.SECURITY_KEY, {expiresIn: "1m"});
+                const tokenUser = await jwt.sign({user: element.pseudo}, process.env.SECURITY_KEY, {expiresIn: "30m"});
                 await db.updateOne({email: element.email}, {$set: {token: tokenUser}})
+                exist.token = tokenUser
                 return exist
             }
             return false
